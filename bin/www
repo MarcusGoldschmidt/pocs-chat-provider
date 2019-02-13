@@ -25,7 +25,11 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, function () {
+  console.log('APP listening on *:' + port);
+  require('../socket')(server);
+  console.log('Socket server will be on *:' + port);
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -35,17 +39,14 @@ server.on('listening', onListening);
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
-
   if (isNaN(port)) {
     // named pipe
     return val;
   }
-
   if (port >= 0) {
     // port number
     return port;
   }
-
   return false;
 }
 
