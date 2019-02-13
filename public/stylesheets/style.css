@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+pre {
+  padding: 10px;
+  background-color: #111111;
+  border: 1px solid gray;
+  border-radius: 3px;
+  font-size: 10px;
+  color: white;
+}
