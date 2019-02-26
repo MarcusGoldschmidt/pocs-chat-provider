@@ -1,19 +1,41 @@
-body {
-  padding: 50px;
-  background-color: #111111;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: white;
+@import "../../node_modules/spectre.scss/spectre.scss";
+
+html, body {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
+.bg--white {
+  background-color: white;
 }
 
-pre {
-  padding: 10px;
-  background-color: #111111;
-  border: 1px solid gray;
-  border-radius: 3px;
-  font-size: 10px;
+.index {
+  background-color: #303742;
   color: white;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+  &__flex {
+    display: flex;
+    height: 80%;
+
+    &--title {
+      width: 40%;
+      padding: 2rem;
+    }
+
+    &--chat {
+      padding: 2rem;
+      width: 60%;
+    }
+  }
+}
+
+.chat{
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
