@@ -34,8 +34,52 @@ html, body {
   }
 }
 
-.chat{
+.chat {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+
+  &__mensagem {
+    width: 60%;
+    padding: 1rem !important;
+    background-color: #5a5a5a;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+
+    &--self {
+      margin-left: 35%;
+      color: #54d43b;
+    }
+
+    &--name {
+      color: #00BCD4;
+      &__self {
+        color: #54d43b;
+      }
+    }
+
+    &--body {
+      color: white;
+    }
+
+    &--send {
+      padding-left: 40%;
+    }
+  }
+
+  &__input {
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #00BCD4;
+    color: white;
+    padding-left: 5%;
+
+    &:focus {
+      outline: none;
+      border-color: #005b6e;
+      box-shadow: none;
+    }
+  }
+
 }

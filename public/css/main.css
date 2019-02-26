@@ -2335,3 +2335,31 @@ html, body {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden; }
+  .chat__mensagem {
+    width: 60%;
+    padding: 1rem !important;
+    background-color: #5a5a5a;
+    border-radius: 10px;
+    margin-bottom: 1rem; }
+    .chat__mensagem--self {
+      margin-left: 35%;
+      color: #54d43b; }
+    .chat__mensagem--name {
+      color: #00BCD4; }
+      .chat__mensagem--name__self {
+        color: #54d43b; }
+    .chat__mensagem--body {
+      color: white; }
+    .chat__mensagem--send {
+      padding-left: 40%; }
+  .chat__input {
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid;
+    border-color: #00BCD4;
+    color: white;
+    padding-left: 5%; }
+    .chat__input:focus {
+      outline: none;
+      border-color: #005b6e;
+      box-shadow: none; }
