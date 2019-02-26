@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "node ./bin/www",
-    "watch": "nodemon ./bin/www",
+    "serve": "npm run build && node ./bin/www",
+    "watch": "npm run build && nodemon ./bin/www",
     "build": "node-sass --include-path scss views/assets/main.scss   public/css/main.css"
   },
   "dependencies": {
