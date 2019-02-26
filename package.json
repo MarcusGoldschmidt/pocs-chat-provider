@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "node ./bin/www"
+    "serve": "node ./bin/www",
+    "watch": "nodemon ./bin/www",
+    "build": "node-sass --include-path scss views/assets/main.scss   public/css/main.css"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -11,7 +13,9 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
+    "node-sass": "^4.11.0",
     "pug": "2.0.0-beta11",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "spectre.scss": "0.0.3"
   }
 }
