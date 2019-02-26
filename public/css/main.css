@@ -2354,6 +2354,7 @@ html, body {
       padding-left: 40%; }
   .chat__input {
     border-radius: 10px;
+    font-size: 1rem;
     background-color: transparent;
     border: 2px solid;
     border-color: #00BCD4;
