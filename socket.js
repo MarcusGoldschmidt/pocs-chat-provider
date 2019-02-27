@@ -5,11 +5,12 @@ module.exports = (server, serveradmin) => {
 
     io.on('connection', function (socket) {
 
-        socket.broadcast.emit('/','user connected');
+        // Pegando ip de Vacilaum heheh
+        console.log('New connection from: ' + socket.handshake.address);
 
         socket.on('/', function (msg) {
+
             if (msg !== false) {
-                console.log(msg);
                 socket.broadcast.emit('/', {
                     user: 'Anônimo',
                     body: msg,
