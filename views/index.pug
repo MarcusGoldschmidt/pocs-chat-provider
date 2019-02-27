@@ -4,8 +4,12 @@ block content
     div.index
         div.index__flex
             div.index__flex--title
-                h1= title
-                p Welcome to #{title}
+                if sala === undefined
+                    h1 POC's
+                    h6 Project Of Computer Science
+                else
+                    h1 #{sala}
+                    h6 Seja bem vindo a #{sala}
             div.index__flex--chat
                 div.chat#chat
                 div.form-group

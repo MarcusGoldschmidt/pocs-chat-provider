@@ -5,18 +5,13 @@ module.exports = (server, serveradmin) => {
 
     io.on('connection', function (socket) {
 
-        // Pegando ip de Vacilaum heheh
-        console.log('New connection from: ' + socket.handshake.address);
-
+        // Pegar a url ainda nesse escopo
         socket.on('/', function (msg) {
-
-            if (msg !== false) {
-                socket.broadcast.emit('/', {
-                    user: 'Anônimo',
-                    body: msg,
-                    digit: false
-                });
-            }
+            socket.broadcast.emit('/', {
+                user: 'Anônimo',
+                body: msg,
+                digit: false
+            });
         });
     });
 };

@@ -1,15 +1,12 @@
 // Socket IO
 const socket = io();
 
-const room = "";
-
 (function (window) {
     const msg = document.getElementById('msg');
-    const chat = document.getElementById('chat');
 
     // Recebendo mensagens
     socket.on('/', function (data) {
-        if (data.user !== undefined) {
+        if (data.body !== false) {
             createDiv(data.body, data.user);
         }
     });
@@ -18,7 +15,6 @@ const room = "";
     msg.addEventListener('keyup', function (e) {
         if (e.key === "Enter") {
             createDiv(msg.value);
-
             socket.emit('/', msg.value);
             msg.value = "";
         } else {
@@ -28,6 +24,8 @@ const room = "";
 }(this));
 
 function createDiv(msg, author) {
+    let chat = document.getElementById('chat');
+
     if(author !== undefined){
         let div = document.createElement("div");
         div.setAttribute("class", "chat__mensagem");
