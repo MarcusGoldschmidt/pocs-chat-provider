@@ -4,19 +4,22 @@ const socket = io();
 const url = 'https://randomuser.me/api/';
 
 const user = {
-    url: '/',
+    url: window.location.pathname,
     send: {
         name: '',
-        msg: ''
+        msg: '',
+        digit: false
     }
 };
+
+console.log(user);
 
 fetch(url)
     .then(resp => {
         resp.json()
             .then(data => {
                 let name = data.results[0].name;
-                user.send.name = name.title + ' ' + name.first + ' ' + name.last;
+                user.send.name = name.title + ' ' + name.first;
             });
     });
 
@@ -26,7 +29,6 @@ fetch(url)
 
     // Recebendo mensagens
     socket.on(user.url, function (data) {
-        console.log(data);
         createDiv(data.msg, data.name);
     });
 
@@ -35,10 +37,10 @@ fetch(url)
         user.send.msg = msg.value;
         if (e.key === "Enter") {
             createDivSelf(msg.value);
-            socket.emit(user.url, user);
+            socket.emit('index', user);
             msg.value = "";
         } else {
-            socket.emit(user.url, false);
+            socket.emit('index', false);
         }
     });
 }(this));
@@ -64,9 +66,6 @@ function createDivSelf() {
 }
 
 function createDiv(msg, author) {
-
-    console.log(msg,author);
-
     let chat = document.getElementById('chat');
 
     let div = document.createElement("div");
