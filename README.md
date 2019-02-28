@@ -1,6 +1,6 @@
 # POC-s-chat
 
-###Instalando
+##Instalando
 
 * `git clone https://github.com/MarcusGoldschmidt/POC-s-chat.git`
 
