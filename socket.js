@@ -4,10 +4,6 @@ module.exports = (server, serveradmin) => {
     io = require('socket.io')(server);
 
     io.on('connection', function (socket) {
-
-
-
-
         // Pegar a url ainda nesse escopo
         socket.on('index', function (user) {
             if (user !== false) {

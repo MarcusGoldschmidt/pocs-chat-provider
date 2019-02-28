@@ -12,8 +12,6 @@ const user = {
     }
 };
 
-console.log(user);
-
 fetch(url)
     .then(resp => {
         resp.json()
