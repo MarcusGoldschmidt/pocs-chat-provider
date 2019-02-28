@@ -4,7 +4,7 @@
 
 * `git clone https://github.com/MarcusGoldschmidt/POC-s-chat.git`
 
-Entrando na parta raiz do projeto
+Entrando na pasta raiz do projeto
 
 * `npm install`
 
