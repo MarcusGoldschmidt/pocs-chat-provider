@@ -21,7 +21,6 @@ fetch(url)
             });
     });
 
-
 (function (window) {
     const msg = document.getElementById('msg');
 
