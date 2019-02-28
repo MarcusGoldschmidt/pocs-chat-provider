@@ -21,15 +21,39 @@ html, body {
   &__flex {
     display: flex;
     height: 80%;
+    flex-wrap: wrap;
 
     &--title {
       width: 40%;
       padding: 2rem;
+
+      @media (max-width: 576px){
+        height: 40%;
+        width: 100%;
+        border-bottom: #5a5a5a solid 2px;
+      }
+
+      @media (max-width: 768px){
+        width: 30%;
+      }
     }
 
     &--chat {
       padding: 2rem;
       width: 60%;
+
+      @media (max-width: 576px){
+        width: 100%;
+      }
+
+      @media (max-width: 768px){
+        width: 70%;
+      }
+    }
+
+    &--isDigit{
+      font-size: 0.9rem;
+      margin: 0;
     }
   }
 }
@@ -75,6 +99,10 @@ html, body {
     border-color: #00BCD4;
     color: white;
     padding-left: 5%;
+
+    @media (max-width: 768px){
+      font-size: 1.5rem;
+    }
 
     &:focus {
       outline: none;
