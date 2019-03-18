@@ -11,3 +11,7 @@ Entrando na pasta raiz do projeto
 * `npm run serve`
 
 Acesso em [localhost:8080](http://localhost:8080/)
+
+### Instalando
+
+* unico campo obrigatório é  `user.room ` que define a sala a ser emitida a mensagem.
