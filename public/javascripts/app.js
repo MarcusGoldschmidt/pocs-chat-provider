@@ -3,14 +3,14 @@ const socket = io();
 
 const url = 'https://randomuser.me/api/';
 
-const digit = [];
+const isDigit = [];
 
 const user = {
     url: window.location.pathname,
     send: {
         name: '',
         msg: '',
-        digit: false,
+        isDigit: false,
         color: null
     }
 };
@@ -20,7 +20,7 @@ fetch(url)
         resp.json()
             .then(data => {
                 let name = data.results[0].name;
-                user.send.name = name.title + ' ' + name.first;
+                user.send.name = name.first;
             });
     });
 
@@ -29,9 +29,12 @@ fetch(url)
 
     // Recebendo mensagens
     socket.on(user.url, function (data) {
-        if (data.send.digit === true) {
-            // Alguém está digitando
-            isDigit(data.send.name);
+
+        console.log(data);
+
+        if (data.send.isDigit === true) {
+            // Alguém está isDigitando
+            isisDigit(data.send.name);
         } else {
             // Mensagem completa
             console.log(data);
@@ -44,34 +47,34 @@ fetch(url)
     msg.addEventListener('keyup', function (e) {
         user.send.msg = msg.value;
         if (e.key === "Enter") {
-            user.send.digit = false;
+            user.send.isisDigit = false;
             createDivSelf(msg.value);
             socket.emit('index', user);
             msg.value = "";
         } else {
-            user.send.digit = true;
+            user.send.isisDigit = true;
             socket.emit('index', {
                 url: user.url,
                 send: {
                     name: user.send.name,
-                    digit: user.send.digit
+                    isDigit: user.send.isDigit
                 }
             });
         }
     });
 }(this));
 
-function isDigit(name) {
+function isisDigit(name) {
 
-    digit.push(name);
+    isDigit.push(name);
 
-    let isDigiting = document.getElementById('isDigit');
-    isDigiting.innerText = digit[0] + " está digitando";
+    let isDigiting = document.getElementById('isisDigit');
+    isDigiting.innerText = isDigit[0] + " está isDigitando";
 
     setTimeout(function () {
-        digit.shift();
+        isDigit.shift();
 
-        if(digit.length === 0){
+        if(isDigit.length === 0){
             isDigiting.innerText = '';
         }
     }, 2000);
